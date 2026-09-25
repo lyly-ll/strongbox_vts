@@ -58,6 +58,7 @@ jobs:
             --no-tags \
             --force-sync \
             prebuilts/build-tools \
+            prebuilts/siso \
             prebuilts/go/linux-x86 \
             prebuilts/vndk/v31 \
             prebuilts/vndk/v32 \
