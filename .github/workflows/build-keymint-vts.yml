@@ -58,6 +58,7 @@ jobs:
             --no-tags \
             --force-sync \
             prebuilts/build-tools \
+            prebuilts/go/linux-x86 \
             build/make \
             build/soong \
             build/blueprint \
