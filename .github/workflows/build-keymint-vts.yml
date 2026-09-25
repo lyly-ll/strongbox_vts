@@ -57,6 +57,7 @@ jobs:
             --no-clone-bundle \
             --no-tags \
             --force-sync \
+            prebuilts/build-tools \
             build/make \
             build/soong \
             build/blueprint \
