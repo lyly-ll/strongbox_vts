@@ -38,7 +38,11 @@ jobs:
           repo init \
             -u https://android.googlesource.com/platform/manifest \
             -b android-17.0.0_r1 \
+            --repo-url=https://gerrit.googlesource.com/git-repo \
+            --repo-rev=stable \
             --depth=1 \
+            --partial-clone \
+            --clone-filter=blob:none \
             --no-clone-bundle \
             --no-use-superproject
 
@@ -49,10 +53,24 @@ jobs:
           cd android
           repo sync \
             -c \
-            -j"$(nproc)" \
+            -j4 \
+            --partial-clone \
+            --clone-filter=blob:none \
             --no-clone-bundle \
             --no-tags \
-            --force-sync
+            --force-sync \
+            build/make \
+            build/soong \
+            build/blueprint \
+            test/vts \
+            hardware/interfaces \
+            system/keymint \
+            system/core \
+            system/libbase \
+            system/libhidl \
+            external/boringssl \
+            external/googletest \
+            frameworks/native
 
       - name: Build KeyMint VTS target
         shell: bash
@@ -60,7 +78,7 @@ jobs:
           set -euxo pipefail
           cd android
           source build/envsetup.sh
-          lunch aosp_cf_x86_64_phone-userdebug
+          lunch aosp_arm64-userdebug
           m -j"$(nproc)" VtsAidlKeyMintTargetTest
 
       - name: Collect VTS binary
