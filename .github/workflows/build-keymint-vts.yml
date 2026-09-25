@@ -1,0 +1,89 @@
+name: Build Android 17 KeyMint VTS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Check workspace capacity
+        shell: bash
+        run: |
+          set -euxo pipefail
+          df -h /
+          test "$(df --output=avail -k / | tail -n 1)" -gt 50000000
+
+      - name: Install repo tool
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p "${HOME}/bin"
+          curl -fsSL https://storage.googleapis.com/git-repo-downloads/repo \
+            -o "${HOME}/bin/repo"
+          chmod 0755 "${HOME}/bin/repo"
+          echo "${HOME}/bin" >> "${GITHUB_PATH}"
+
+      - name: Initialize Android 17 source tree
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p android
+          cd android
+          repo init \
+            -u https://android.googlesource.com/platform/manifest \
+            -b android-17.0.0_r1 \
+            --depth=1 \
+            --no-clone-bundle \
+            --no-use-superproject
+
+      - name: Sync Android 17 source tree
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd android
+          repo sync \
+            -c \
+            -j"$(nproc)" \
+            --no-clone-bundle \
+            --no-tags \
+            --force-sync
+
+      - name: Build KeyMint VTS target
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd android
+          source build/envsetup.sh
+          lunch aosp_cf_x86_64_phone-userdebug
+          m -j"$(nproc)" VtsAidlKeyMintTargetTest
+
+      - name: Collect VTS binary
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd android
+          mkdir -p ../keymint-vts-artifact
+          mapfile -t binaries < <(find out -type f -name VtsAidlKeyMintTargetTest -perm -0100)
+          test "${#binaries[@]}" -gt 0
+          printf '%s\n' "${binaries[@]}"
+          cp "${binaries[0]}" ../keymint-vts-artifact/VtsAidlKeyMintTargetTest
+          sha256sum ../keymint-vts-artifact/VtsAidlKeyMintTargetTest \
+            > ../keymint-vts-artifact/SHA256SUMS
+          cp security/keymint/aidl/vts/functional/Android.bp \
+            ../keymint-vts-artifact/Android.bp
+          cp security/keymint/aidl/vts/functional/AndroidTest.xml \
+            ../keymint-vts-artifact/AndroidTest.xml
+
+      - name: Upload KeyMint VTS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-17-keymint-vts-${{ github.sha }}
+          path: keymint-vts-artifact/
+          if-no-files-found: error
+          retention-days: 7
