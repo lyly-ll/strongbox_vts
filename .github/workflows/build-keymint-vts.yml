@@ -72,6 +72,7 @@ jobs:
             external/googletest \
             external/golang-protobuf \
             external/pogreb \
+            external/starlark-go \
             frameworks/native
 
       - name: Build KeyMint VTS target
