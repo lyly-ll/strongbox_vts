@@ -58,6 +58,7 @@ jobs:
             --no-tags \
             --force-sync \
             prebuilts/build-tools \
+            prebuilts/siso \
             prebuilts/go/linux-x86 \
             prebuilts/vndk/v31 \
             prebuilts/vndk/v32 \
@@ -86,6 +87,8 @@ jobs:
             external/pogreb \
             external/starlark-go \
             frameworks/native
+          test -x prebuilts/siso/linux-x86/siso
+          ls -lh prebuilts/siso/linux-x86/siso
 
       - name: Build KeyMint VTS target
         shell: bash
