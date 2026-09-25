@@ -70,6 +70,7 @@ jobs:
             system/libhidl \
             external/boringssl \
             external/googletest \
+            external/golang-protobuf \
             frameworks/native
 
       - name: Build KeyMint VTS target
