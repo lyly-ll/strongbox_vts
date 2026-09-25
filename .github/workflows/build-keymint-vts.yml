@@ -76,7 +76,7 @@ jobs:
           set -euxo pipefail
           cd android
           source build/envsetup.sh
-          lunch aosp_arm64-userdebug
+          lunch aosp_arm64-trunk_staging-userdebug
           m -j"$(nproc)" VtsAidlKeyMintTargetTest
 
       - name: Collect VTS binary
