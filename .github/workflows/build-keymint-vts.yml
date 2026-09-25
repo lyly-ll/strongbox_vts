@@ -71,6 +71,8 @@ jobs:
             test/vts \
             hardware/interfaces \
             system/keymint \
+            kernel/configs \
+            system/sepolicy \
             system/core \
             system/libbase \
             system/libhidl \
