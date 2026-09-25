@@ -71,6 +71,7 @@ jobs:
             external/boringssl \
             external/googletest \
             external/golang-protobuf \
+            external/pogreb \
             frameworks/native
 
       - name: Build KeyMint VTS target
