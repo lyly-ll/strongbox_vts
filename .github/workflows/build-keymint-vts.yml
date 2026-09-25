@@ -54,8 +54,6 @@ jobs:
           repo sync \
             -c \
             -j4 \
-            --partial-clone \
-            --clone-filter=blob:none \
             --no-clone-bundle \
             --no-tags \
             --force-sync \
