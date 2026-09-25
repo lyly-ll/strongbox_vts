@@ -59,6 +59,7 @@ jobs:
             --force-sync \
             prebuilts/build-tools \
             prebuilts/go/linux-x86 \
+            prebuilts/vndk/v31 \
             build/make \
             build/soong \
             build/blueprint \
