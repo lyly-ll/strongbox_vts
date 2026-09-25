@@ -67,6 +67,7 @@ jobs:
             build/soong \
             build/blueprint \
             build/release \
+            toolchain/pgo-profiles \
             test/vts \
             hardware/interfaces \
             system/keymint \
