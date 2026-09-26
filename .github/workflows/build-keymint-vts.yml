@@ -115,6 +115,9 @@ jobs:
           rm -f system/apex/tools/Android.bp
           rm -f frameworks/native/services/surfaceflinger/fuzzer/Android.bp
           rm -f hardware/interfaces/automotive/vehicle/aidl/impl/3/Android.bp
+          rm -f hardware/interfaces/automotive/vehicle/aidl/impl/current/fake_impl/GeneratorHub/Android.bp
+          rm -f hardware/interfaces/security/secretkeeper/aidl/vts/Android.bp
+          rm -f system/apex/tools/apex-ls/Android.bp
           rm -f hardware/interfaces/automotive/vehicle/aidl/impl/current/Android.bp
           rm -f system/core/init/Android.bp
           rm -f hardware/interfaces/automotive/remoteaccess/hal/default/test/Android.bp
