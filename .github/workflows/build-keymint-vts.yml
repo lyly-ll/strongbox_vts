@@ -122,6 +122,18 @@ jobs:
           find hardware/interfaces/automotive/vehicle/aidl/impl -type f -name Android.bp -print -delete
           rm -f hardware/interfaces/automotive/vehicle/aidl/aidl_test/Android.bp
           find frameworks/native/services/surfaceflinger -type f -name Android.bp -print -delete
+          # Bulk-prune unrelated Android.bp trees; retain KeyMint/AIDL/Binder/VTS core paths.
+          find hardware/interfaces/automotive -type f -name Android.bp -print -delete
+          find hardware/interfaces/security/see -type f -name Android.bp -print -delete
+          find hardware/interfaces/security/secretkeeper -type f -name Android.bp -print -delete
+          find hardware/interfaces -path '*/fuzzer/*' -type f -name Android.bp -print -delete
+          find frameworks/native -path '*/fuzzer/*' -type f -name Android.bp -print -delete
+          find frameworks/base -path '*/fuzzer/*' -type f -name Android.bp -print -delete
+          find system/apex/tools -type f -name Android.bp -print -delete
+          find frameworks/native/services/surfaceflinger -type f -name Android.bp -print -delete
+          find frameworks/native/libs/tonemap -type f -name Android.bp -print -delete
+          find frameworks/native/libs/ipcrenderbuffer -type f -name Android.bp -print -delete
+          find build/make/tools/ide_query -type f -name Android.bp -print -delete
           rm -f frameworks/base/native/graphics/jni/Android.bp
           rm -f frameworks/base/packages/SettingsProvider/Android.bp
           rm -f frameworks/base/tools/protologtool/lint/Android.bp
