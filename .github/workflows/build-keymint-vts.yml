@@ -126,6 +126,8 @@ jobs:
           rm -f frameworks/base/packages/SettingsProvider/Android.bp
           rm -f frameworks/base/tools/protologtool/lint/Android.bp
           rm -f frameworks/base/media/jni/Android.bp
+          rm -f frameworks/native/libs/tonemap/tests/Android.bp
+          rm -f build/make/tools/ide_query/cc_analyzer/Android.bp
           rm -f system/core/init/Android.bp
           rm -f hardware/interfaces/automotive/remoteaccess/hal/default/test/Android.bp
           rm -f hardware/interfaces/security/see/hwcrypto/aidl/vts/functional/Android.bp
