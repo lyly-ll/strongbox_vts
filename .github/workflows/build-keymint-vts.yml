@@ -72,6 +72,7 @@ jobs:
             build/release \
             toolchain/pgo-profiles \
             test/vts \
+            test/app_compat/csuite \
             hardware/interfaces \
             system/hardware/interfaces \
             system/keymint \
