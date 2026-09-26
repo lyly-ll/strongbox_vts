@@ -109,8 +109,8 @@ jobs:
           cd android
           # frameworks/base is synced for core defaults; its unrelated test blueprints
           # pull in CTS/Connectivity/Mockito modules that are not needed by KeyMint VTS.
-          find frameworks/base \\
-            \( -path '*/tests/*' -o -path '*/test/*' -o -path '*/tools/lint/*' \) \\
+          find frameworks/base \
+            \( -path '*/tests/*' -o -path '*/test/*' -o -path '*/tools/lint/*' \
             -type f -name Android.bp -print -delete
 
 
