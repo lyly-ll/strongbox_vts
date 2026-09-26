@@ -72,11 +72,15 @@ jobs:
             test/vts \
             hardware/interfaces \
             system/keymint \
+            system/keymaster \
             system/tools/aidl \
             system/tools/hidl \
             system/tools/xsdc \
             kernel/configs \
             system/sepolicy \
+            system/apex \
+            packages/modules/common \
+            packages/modules/NeuralNetworks \
             system/core \
             system/libbase \
             system/libhidl \
