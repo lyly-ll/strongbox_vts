@@ -113,6 +113,8 @@ jobs:
           rm -f frameworks/native/libs/ipcrenderbuffer/tests/Android.bp
           rm -f frameworks/native/libs/ipcrenderbuffer/Android.bp
           rm -f system/core/init/Android.bp
+          rm -f hardware/interfaces/automotive/remoteaccess/hal/default/test/Android.bp
+          rm -f hardware/interfaces/security/see/hwcrypto/aidl/vts/functional/Android.bp
           rm -f hardware/interfaces/automotive/remoteaccess/hal/default/Android.bp
           rm -f system/core/debuggerd/Android.bp
           rm -f hardware/interfaces/virtualization/capabilities_service/vts/Android.bp
