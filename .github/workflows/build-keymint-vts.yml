@@ -60,6 +60,7 @@ jobs:
             prebuilts/build-tools \
             prebuilts/siso \
             prebuilts/go/linux-x86 \
+            prebuilts/rust \
             prebuilts/vndk/v31 \
             prebuilts/vndk/v32 \
             prebuilts/vndk/v33 \
@@ -80,9 +81,11 @@ jobs:
             system/sepolicy \
             system/apex \
             packages/modules/common \
+            packages/modules/NeuralNetworks \
             system/core \
             system/libbase \
             system/libhidl \
+            system/libhwbinder \
             system/libvintf \
             external/boringssl \
             external/googletest \
