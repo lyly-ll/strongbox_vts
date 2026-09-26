@@ -70,9 +70,7 @@ jobs:
             build/release \
             toolchain/pgo-profiles \
             test/vts \
-            test/app_compat/csuite \
             hardware/interfaces \
-            system/hardware/interfaces \
             system/keymint \
             system/keymaster \
             system/tools/aidl \
@@ -82,8 +80,6 @@ jobs:
             system/sepolicy \
             system/apex \
             packages/modules/common \
-            packages/modules/NeuralNetworks \
-            packages/modules/Media \
             system/core \
             system/libbase \
             system/libhidl \
@@ -96,8 +92,6 @@ jobs:
             external/pogreb \
             external/starlark-go \
             frameworks/native \
-            frameworks/base \
-            frameworks/av
           test -x prebuilts/siso/linux-x86/siso
           ls -lh prebuilts/siso/linux-x86/siso
 
