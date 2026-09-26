@@ -138,6 +138,9 @@ jobs:
           rm -f system/libhidl/transport/base/1.0/vts/functional/Android.bp
           rm -f system/core/rootdir/tests/RlimitTest/Android.bp
           rm -f frameworks/native/libs/renderengine/Android.bp
+          find frameworks/native/libs/renderengine -type f -name Android.bp -print -delete
+          rm -f frameworks/base/libs/hwui/Android.bp
+          find hardware/interfaces/graphics -path '*/vts/*' -type f -name Android.bp -print -delete
           rm -f frameworks/base/media/jni/audioeffect/Android.bp
           find build/make/tools/ide_query -type f -name Android.bp -print -delete
           rm -f frameworks/base/native/graphics/jni/Android.bp
