@@ -134,6 +134,7 @@ jobs:
           find hardware/interfaces/security/see -type f -name Android.bp -print -delete
           find hardware/interfaces/security/secretkeeper -type f -name Android.bp -print -delete
           find hardware/interfaces -path '*/fuzzer/*' -type f -name Android.bp -print -delete
+          find system/core hardware/interfaces -type f -name Android.bp -print0 | xargs -0 grep -lZ -E 'service_fuzzer_defaults|fuzzer_disable_leaks' | xargs -0 -r rm -v
           find frameworks/native -path '*/fuzzer/*' -type f -name Android.bp -print -delete
           find frameworks/base -path '*/fuzzer/*' -type f -name Android.bp -print -delete
           find system/apex/tools -type f -name Android.bp -print -delete
