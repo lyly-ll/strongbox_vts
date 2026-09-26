@@ -61,6 +61,7 @@ jobs:
             prebuilts/siso \
             prebuilts/go/linux-x86 \
             prebuilts/rust \
+            prebuilts/rust-toolchain/linux-x86 \
             prebuilts/vndk/v31 \
             prebuilts/vndk/v32 \
             prebuilts/vndk/v33 \
@@ -72,6 +73,7 @@ jobs:
             toolchain/pgo-profiles \
             test/vts \
             hardware/interfaces \
+            system/hardware/interfaces \
             system/keymint \
             system/keymaster \
             system/tools/aidl \
@@ -82,6 +84,7 @@ jobs:
             system/apex \
             packages/modules/common \
             packages/modules/NeuralNetworks \
+            packages/modules/Media \
             system/core \
             system/libbase \
             system/libhidl \
@@ -93,7 +96,8 @@ jobs:
             external/go-cmp \
             external/pogreb \
             external/starlark-go \
-            frameworks/native
+            frameworks/native \
+            frameworks/base
           test -x prebuilts/siso/linux-x86/siso
           ls -lh prebuilts/siso/linux-x86/siso
 
