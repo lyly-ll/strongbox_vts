@@ -122,6 +122,10 @@ jobs:
           find hardware/interfaces/automotive/vehicle/aidl/impl -type f -name Android.bp -print -delete
           rm -f hardware/interfaces/automotive/vehicle/aidl/aidl_test/Android.bp
           find frameworks/native/services/surfaceflinger -type f -name Android.bp -print -delete
+          rm -f frameworks/base/native/graphics/jni/Android.bp
+          rm -f frameworks/base/packages/SettingsProvider/Android.bp
+          rm -f frameworks/base/tools/protologtool/lint/Android.bp
+          rm -f frameworks/base/media/jni/Android.bp
           rm -f system/core/init/Android.bp
           rm -f hardware/interfaces/automotive/remoteaccess/hal/default/test/Android.bp
           rm -f hardware/interfaces/security/see/hwcrypto/aidl/vts/functional/Android.bp
