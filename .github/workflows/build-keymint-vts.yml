@@ -136,7 +136,6 @@ jobs:
           find hardware/interfaces -path '*/fuzzer/*' -type f -name Android.bp -print -delete
           find system/core hardware/interfaces -type f -name Android.bp -print0 | xargs -0 grep -lZ -E 'service_fuzzer_defaults|fuzzer_disable_leaks' | xargs -0 -r rm -v
           find packages frameworks system hardware -type f -name Android.bp -print0 | xargs -0 grep -lZ -E 'service_fuzzer_defaults(_rs)?|fuzzer_disable_leaks' | xargs -0 -r rm -v
-          find vendor/tmc -type f -name Android.bp -print -delete
           find hardware/interfaces/broadcastradio -path '*/test/*' -type f -name Android.bp -print -delete
           find frameworks/native -path '*/fuzzer/*' -type f -name Android.bp -print -delete
           find frameworks/base -path '*/fuzzer/*' -type f -name Android.bp -print -delete
