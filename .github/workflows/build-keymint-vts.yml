@@ -133,6 +133,8 @@ jobs:
           find frameworks/native/services/surfaceflinger -type f -name Android.bp -print -delete
           find frameworks/native/libs/tonemap -type f -name Android.bp -print -delete
           find frameworks/native/libs/ipcrenderbuffer -type f -name Android.bp -print -delete
+          find frameworks/native/libs/shaders/tests -type f -name Android.bp -print -delete
+          rm -f system/core/trusty/secretkeeper/Android.bp
           find build/make/tools/ide_query -type f -name Android.bp -print -delete
           rm -f frameworks/base/native/graphics/jni/Android.bp
           rm -f frameworks/base/packages/SettingsProvider/Android.bp
