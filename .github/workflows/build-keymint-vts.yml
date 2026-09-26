@@ -155,6 +155,7 @@ jobs:
           rm -f frameworks/base/media/jni/audioeffect/Android.bp
           find build/make/tools/ide_query -type f -name Android.bp -print -delete
           rm -f build/soong/java/core-libraries/Android.bp
+          find frameworks/base -type f -name Android.bp -print0 | xargs -0 grep -lZ -E 'api\.combined\.(public|system|test)\.latest' | xargs -0 -r rm -v
           rm -f frameworks/base/native/graphics/jni/Android.bp
           rm -f frameworks/base/packages/SettingsProvider/Android.bp
           rm -f frameworks/base/tools/protologtool/lint/Android.bp
