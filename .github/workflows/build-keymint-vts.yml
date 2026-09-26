@@ -84,6 +84,8 @@ jobs:
             system/core \
             system/libbase \
             system/libhidl \
+            system/libvintf \
+            platform_testing \
             external/boringssl \
             external/googletest \
             external/golang-protobuf \
@@ -91,6 +93,8 @@ jobs:
             external/pogreb \
             external/starlark-go \
             frameworks/native
+            frameworks/base \
+            frameworks/av \
           test -x prebuilts/siso/linux-x86/siso
           ls -lh prebuilts/siso/linux-x86/siso
 
