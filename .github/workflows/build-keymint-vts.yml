@@ -84,7 +84,6 @@ jobs:
             system/libbase \
             system/libhidl \
             system/libvintf \
-            platform_testing \
             external/boringssl \
             external/googletest \
             external/golang-protobuf \
