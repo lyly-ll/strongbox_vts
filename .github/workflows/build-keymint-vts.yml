@@ -123,7 +123,7 @@ jobs:
           rm -f hardware/interfaces/automotive/vehicle/aidl/aidl_test/Android.bp
           find frameworks/native/services/surfaceflinger -type f -name Android.bp -print -delete
           # Bulk-prune unrelated Android.bp trees; retain KeyMint/AIDL/Binder/VTS core paths.
-          find hardware/interfaces -path '*/vts/*' -type f -name Android.bp `
+          find hardware/interfaces -path '*/vts/*' -type f -name Android.bp \\
             ! -path 'hardware/interfaces/security/keymint/*' -print -delete
           find frameworks/native -path '*/tests/*' -type f -name Android.bp -print -delete
           find system/core -path '*/tests/*' -type f -name Android.bp -print -delete
