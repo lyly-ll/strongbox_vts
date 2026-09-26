@@ -72,6 +72,7 @@ jobs:
             test/vts \
             test/app_compat/csuite \
             hardware/interfaces \
+            system/hardware/interfaces \
             system/keymint \
             system/keymaster \
             system/tools/aidl \
@@ -82,6 +83,7 @@ jobs:
             system/apex \
             packages/modules/common \
             packages/modules/NeuralNetworks \
+            packages/modules/Media \
             system/core \
             system/libbase \
             system/libhidl \
