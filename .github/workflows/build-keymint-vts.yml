@@ -102,6 +102,18 @@ jobs:
           test -x prebuilts/siso/linux-x86/siso
           ls -lh prebuilts/siso/linux-x86/siso
 
+      - name: Prune unrelated framework test blueprints
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd android
+          # frameworks/base is synced for core defaults; its unrelated test blueprints
+          # pull in CTS/Connectivity/Mockito modules that are not needed by KeyMint VTS.
+          find frameworks/base \\
+            \( -path '*/tests/*' -o -path '*/test/*' -o -path '*/tools/lint/*' \) \\
+            -type f -name Android.bp -print -delete
+
+
       - name: Build KeyMint VTS target
         shell: bash
         run: |
