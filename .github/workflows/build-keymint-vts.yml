@@ -154,6 +154,7 @@ jobs:
           find hardware/interfaces/graphics -path '*/vts/*' -type f -name Android.bp -print -delete
           rm -f frameworks/base/media/jni/audioeffect/Android.bp
           find build/make/tools/ide_query -type f -name Android.bp -print -delete
+          rm -f build/soong/java/core-libraries/Android.bp
           rm -f frameworks/base/native/graphics/jni/Android.bp
           rm -f frameworks/base/packages/SettingsProvider/Android.bp
           rm -f frameworks/base/tools/protologtool/lint/Android.bp
