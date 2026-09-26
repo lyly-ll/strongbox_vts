@@ -156,6 +156,7 @@ jobs:
           rm -f frameworks/base/native/graphics/jni/Android.bp
           rm -f frameworks/base/packages/SettingsProvider/Android.bp
           rm -f frameworks/base/tools/protologtool/lint/Android.bp
+          rm -f frameworks/base/packages/SystemUI/checks/Android.bp
           rm -f frameworks/base/media/jni/Android.bp
           rm -f frameworks/native/libs/tonemap/tests/Android.bp
           rm -f build/make/tools/ide_query/cc_analyzer/Android.bp
