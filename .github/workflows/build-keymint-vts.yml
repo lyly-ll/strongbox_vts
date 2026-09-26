@@ -109,6 +109,8 @@ jobs:
           cd android
           # frameworks/base is synced for core defaults; its unrelated test blueprints
           # pull in CTS/Connectivity/Mockito modules that are not needed by KeyMint VTS.
+          rm -f frameworks/native/services/surfaceflinger/Android.bp
+          rm -f frameworks/native/libs/ipcrenderbuffer/tests/Android.bp
           rm -f frameworks/native/libs/ipcrenderbuffer/Android.bp
           rm -f system/core/init/Android.bp
           rm -f hardware/interfaces/automotive/remoteaccess/hal/default/Android.bp
