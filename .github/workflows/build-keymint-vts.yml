@@ -92,7 +92,7 @@ jobs:
             external/go-cmp \
             external/pogreb \
             external/starlark-go \
-            frameworks/native
+            frameworks/native \
             frameworks/base \
             frameworks/av \
           test -x prebuilts/siso/linux-x86/siso
